@@ -7,41 +7,51 @@
 
 <html>
 
+<link rel="stylesheet" href="~/css/Form Style.css" />
 
-@model Library.Models.Person
-@{
-    ViewData["Title"] = "Log In";
-}
 
-<h1>@ViewData["Title"]</h1>
-<hr />
 
-<form asp-action="Form" method="post">
-    <div class="row">
-    <div class="col mb-2 p-2">
-    <label for="Username">Enter your username</label>
-            <input type="text" id="Username" name="Username"  />
-    </div>
-    </div>
 
-    <div class="row">
-    <div class="col mb-2 p-2">
-    <label for="Password">Enter your password</label>
-            <input type="password" id="Password" name="Password"  />
-    </div>
-    </div>
+<div class="form">
+    <form asp-action="Form" method="post">
+        @model Library.Models.Person
+        @{
+            ViewData["Title"] = "Log In";
+        }
 
-    <div class="row">
-    <div class="col mb-2 p-2">
-    <input type="submit" value="Submit">
-    </div>
-    </div>
+        <h1>@ViewData["Title"]</h1>
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <input type="text" id="Username" name="Username" value="" placeholder="Username">
+            </div>
+        </div>
 
-    @if (!string.IsNullOrEmpty(ViewBag.Message))
-    {
-        <p style="color:red;">@ViewBag.Message</p>
-    }
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <input type="password" id="Password" name="Password" value="" placeholder="Password">
+            </div>
+        </div>
 
-</form>
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <button class="btnn">LOG IN</button>
+            </div>
+        </div>
+
+        <p class="link">
+            Don't have an account
+            <br>
+            <a href="#">Sign Up</a> Here</a>
+        </p>
+
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <p style="color:red;">@ViewBag.Message</p>
+        }
+
+
+
+    </form>
+</div>
 
 </html>
