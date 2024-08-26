@@ -7,12 +7,12 @@
 
 <html>
 
-<link rel="stylesheet" href="~/css/Form Style.css" />
+<link rel="stylesheet" href="~/css/FormStyle.css" />
 
 
 
 
-<div class="form">
+<div class="login-form">
     <form asp-action="Form" method="post">
         @model Library.Models.Person
         @{
@@ -20,11 +20,15 @@
         }
 
         <h1>@ViewData["Title"]</h1>
+
+
+
         <div class="row">
             <div class="col mb-2 p-2">
                 <input type="text" id="Username" name="Username" value="" placeholder="Username">
             </div>
         </div>
+
 
         <div class="row">
             <div class="col mb-2 p-2">

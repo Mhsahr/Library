@@ -1,25 +1,29 @@
 ﻿@model IEnumerable<Person>
 
-@{
-    ViewData["Title"] = "Registered Users";
-}
+    @{
+        ViewData["Title"] = "Registered Users";
+    }
 
-<h2>Registered Users</h2>
+    <h2>Registered Users</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Password</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model)
-        {
+    <table class="table">
+        <thead>
             <tr>
-                <td>@user.Username</td>
-                <td>@user.Password</td>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Username</th>
+                <th>Password</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Firstname</td>
+                    <td>@user.Lastname</td>
+                    <td>@user.Username</td>
+                    <td>@user.Password</td>
+                </tr>
+            }
+        </tbody>
+    </table>

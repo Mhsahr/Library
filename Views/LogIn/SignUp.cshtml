@@ -1,28 +1,51 @@
-﻿@model Person
+﻿
+<link rel="stylesheet" href="~/css/FormStyle.css" />
 
-@{
-    ViewData["Title"] = "Sign Up";
-}
+<div class="form">
 
-<h2>Sign Up</h2>
+    <form asp-action="SignUp" method="post">
+        @model Person
 
-<form asp-action="SignUp" method="post">
+        @{
+            ViewData["Title"] = "Sign Up";
+        }
+
+        <h1>@ViewData["Title"]</h1>
+
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <input asp-for="Firstname" type="text" id="Firstname" name="Firstname" value="" placeholder="Firstname">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <input asp-for="Lastname" type="text" id="Lastname" name="Lastname" value="" placeholder="Lastname">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <input asp-for="Username" type="text" id="Username" name="Username" value="" placeholder="Username">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <input asp-for="Password" type="password" id="Password" name="Password" value="" placeholder="Password">
+            </div>
+        </div>
 
 
-        <label for="Username"></label>
-        <input asp-for="Username" class="form-control" />
+        <div class="row">
+            <div class="col mb-2 p-2">
+                <button class="btnn">Sign Up</button>
+            </div>
+        </div>
 
-        <label for="Password"></label>
-        <input asp-for="Password" class="form-control" />
-        <br />
-
-    <button type="submit" class="btn btn-primary">Sign Up</button>
-
-
-    @if (!string.IsNullOrEmpty(ViewBag.Message))
-    {
-        <p style="color:red;">@ViewBag.Message</p>
-    }
-</form>
-
-
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <p style="color:red;">@ViewBag.Message</p>
+        }
+    </form>
+</div>
