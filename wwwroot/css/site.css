@@ -20,3 +20,47 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+div{
+    text-align: center;
+}
+
+.home-page {
+    background: url(../Images/Wallpaper_4K3D-13295.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.h1 {
+    position: absolute;
+    right: 730px;
+    top: 350px;
+    color: darksalmon;
+    font-weight: bold;
+}
+
+.h2 {
+    position: absolute;
+    right: 650px;
+    top: 450px;
+    color:darksalmon;
+    font-weight: bold;
+}
+
+.h3 {
+    position: absolute;
+    right: 740px;
+    top: 550px;
+    color: darksalmon;
+    font-weight: bold;
+}
+
+.h4 {
+    position: absolute;
+    right: 600px;
+    top: 650px;
+    color: darksalmon;
+    font-weight: bold;
+}
+
