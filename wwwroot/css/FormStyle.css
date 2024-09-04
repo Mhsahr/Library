@@ -5,8 +5,8 @@
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%),
-    url("../Images/@Wallpaper_4K3D (2763).jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%), url('../Images/Wallpaper_4K3D (3275).jpg');
+  url("../Images/@Wallpaper_4K3D (2763).jpg");
   background-position: center;
   background-size: cover;
   height: 100vh;

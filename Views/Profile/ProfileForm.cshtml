@@ -7,58 +7,57 @@
 
 <html>
 
+<div class="update-form">
+
+    <link rel="stylesheet" href="~/css/UpdateFormStyle.css" />
+    <div class="form">
+        <form asp-action="ProfileForm" method="post">
+            @model Library.Models.Person
+            @{
+                ViewData["Title"] = "Edit Profile";
+            }
+
+            <h1>@ViewData["Title"]</h1>
 
 
 
-
-<div class="login-form">
-    <form asp-action="ProfileForm" method="post">
-        @model Library.Models.Person
-        @{
-            ViewData["Title"] = "Log In";
-        }
-
-        <h1>@ViewData["Title"]</h1>
-
-
-
-        <div class="row">
-            <div class="col mb-2 p-2">
-                <input type="text" id="Firstname" name="Firstname" value="" placeholder="Firstname">
+            <div class="row">
+                <div class="col mb-2 p-2">
+                    <input type="text" id="Firstname" name="Firstname" value="" placeholder="Firstname">
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col mb-2 p-2">
-                <input type="text" id="Lastname" name="Lastname" value="" placeholder="Lastname">
+            <div class="row">
+                <div class="col mb-2 p-2">
+                    <input type="text" id="Lastname" name="Lastname" value="" placeholder="Lastname">
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col mb-2 p-2">
-                <input type="text" id="Username" name="Username" value="" placeholder="Username">
+            <div class="row">
+                <div class="col mb-2 p-2">
+                    <input type="text" id="Username" name="Username" value="" placeholder="Username">
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col mb-2 p-2">
-                <input type="email" id="Email" name="Email" value="" placeholder="Email">
+            <div class="row">
+                <div class="col mb-2 p-2">
+                    <input type="email" id="Email" name="Email" value="" placeholder="Email">
+                </div>
             </div>
-        </div>
 
 
-        <div class="row">
-            <div class="col mb-2 p-2">
-                <input type="password" id="Password" name="Password" value="" placeholder="Password">
+            <div class="row">
+                <div class="col mb-2 p-2">
+                    <input type="password" id="Password" name="Password" value="" placeholder="Password">
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col mb-2 p-2">
-                <button class="btnn">Update Profile</button>
+            <div class="row">
+                <div class="col mb-2 p-2">
+                    <button class="btnn">Update Profile</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
-
 </html>
