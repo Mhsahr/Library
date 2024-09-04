@@ -10,9 +10,7 @@ namespace Library.Controllers
     public class LogInController : Controller
     {
         private readonly ILogger<LogInController> _logger;
-        private static List<Person> personData = new List<Person>() {
-            new Person { Username="mhsa", Password="hamed12345" },
-        };
+
 
         public LogInController(ILogger<LogInController> logger)
         {
@@ -22,7 +20,7 @@ namespace Library.Controllers
 
         public IActionResult LogIn()
         {
-            return View(personData);
+            return View(Person.personData);
         }
 
         public IActionResult Form()
@@ -36,11 +34,11 @@ namespace Library.Controllers
         {
 
             // Check if the form data exists in the list
-            var match = personData.FirstOrDefault(x => x.Username == person.Username && x.Password == person.Password);
+            var match = Person.personData.FirstOrDefault(x => x.Username == person.Username && x.Password == person.Password);
 
             if (match != null)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("HomePage", "MainPage");
             }
             else
             {
@@ -61,7 +59,7 @@ namespace Library.Controllers
         public IActionResult SignUp([FromForm] Person person)
         {
             // Check if the username already exists in the list
-            var existingUser = personData.FirstOrDefault(u => u.Username == person.Username);
+            var existingUser = Person.personData.FirstOrDefault(u => u.Username == person.Username);
 
             if (existingUser != null)
             {
@@ -71,14 +69,17 @@ namespace Library.Controllers
             }
 
             // Create a new user
-            var user = new Person
+            var newUser = new Person
             {
+                Firstname= person.Firstname,
+                Lastname= person.Lastname,
                 Username = person.Username,
+                Email = person.Email,
                 Password = person.Password,
             };
 
             // Add the user to the in-memory list
-            personData.Add(user);
+            Person.personData.Add(newUser);
 
             // Redirect to a confirmation page or login page
             return RedirectToAction("Users", "LogIn");
@@ -88,7 +89,7 @@ namespace Library.Controllers
         [HttpGet]
         public IActionResult Users()
         {
-            return View(personData);
+            return View(Person.personData);
         }
 
 
